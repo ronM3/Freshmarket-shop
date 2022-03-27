@@ -1,0 +1,39 @@
+<nav class="navbar-expand-lg fixed-top navbar-light bg-light mb-3">
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <div class="roundButton">
+      <div class="roundButton">
+        <span *ngIf="showCartButton" class="button3" (click)="openNav()"><i class="fa fa-shopping-cart"></i></span>
+      </div>
+      <div>
+        <span class="badge badge-light">{{this.cartService.cartArray.length}}</span>
+      </div>
+    </div>
+    <ul class="navbar-nav seoncd_nav">
+      <li class="nav-item nav_menu_hover" (click)="onCategoryClicked(0)">
+        <img alt="Not Found" class="li-icons" src="./assets/icons/products3.ico">
+        <a class="nav-link title">All products</a>
+      </li>
+      <li class="nav-item nav_menu_hover" (click)="onCategoryClicked(1)">
+        <img alt="Not Found" class="li-icons" src="./assets/icons/milk_and_eggs.png">
+        <a class="nav-link title">Milk&Eggs</a>
+      </li>
+      <li class="nav-item nav_menu_hover" (click)="onCategoryClicked(2)">
+        <img alt="Not Found" class="li-icons" src="./assets/icons/fruit_and_vegetable2.png">
+        <a class="nav-link title" >Vegetables&Fruits</a>
+      </li>
+      <li class="nav-item nav_menu_hover" (click)="onCategoryClicked(3)">
+        <img alt="Not Found" class="li-icons" src="./assets/icons/meat_fish2.png">
+        <a class="nav-link title">Meat&Fish</a>
+      </li>
+      <li class="nav-item nav_menu_hover" (click)="onCategoryClicked(4)">
+        <img alt="Not Found" class="li-icons" src="./assets/icons/wine_drinks.png">
+        <a class="nav-link title">Wine&Drinks</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<app-cart></app-cart>

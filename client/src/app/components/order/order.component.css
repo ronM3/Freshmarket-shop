@@ -1,0 +1,187 @@
+.container {
+  padding: 0 2rem 2rem 2rem;
+  background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 2.4rem;
+}
+.card.item {
+  flex-direction: row;
+  align-items: center;
+  max-height: 92px;
+  margin-top: 0.5rem;
+  border-radius: 15px;
+  transition: all 0.75s ease;
+}
+.card-body.item {
+  padding: 0.5rem;
+}
+.card-title {
+  white-space: nowrap;
+  position: relative;
+  top: 0.1rem;
+  color: #2f416e;
+  font-size: 16px;
+}
+.amount_items {
+  background-color: transparent;
+  outline: none;
+  text-align: center;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  max-width: 5rem;
+  resize: none;
+  word-break: break-all;
+}
+.item-price {
+  font-weight: 500;
+  color: #2f416e;
+  position: relative;
+}
+.total {
+  background: #007bff;
+  color: #fff;
+  display: flex;
+  padding: 5px;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+.totalprice {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+  justify-content: right;
+  position: relative;
+  left: 15rem;
+}
+.card img {
+  width: 56px;
+  height: 60px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: calc(0.25rem - 1px);
+}
+.deleteB {
+  background-color: white;
+  color: #1579f2;
+  margin-top: 5px;
+  border: none;
+}
+.col-sm-4 {
+  padding-left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.order-title {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #3b99e0;
+  font-weight: 500;
+  padding-top: 20px;
+  margin-top: -13px;
+  margin-bottom: 15px;
+}
+.far.fa-credit-card {
+  position: absolute;
+  top: 13px;
+  padding: 0 15px 5px 10px;
+}
+.h7 {
+  font-size: 15px;
+  font-weight: bold;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.textmuted {
+  color: #7a7a7a;
+}
+.card input::placeholder {
+  font-size: 14px;
+}
+.form-control.credit {
+  text-align: left;
+}
+input.form-control.credit {
+  padding-left: 30px;
+}
+button.form-control.btn.btn-primary.submit-button {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  transition: all 0.3s;
+}
+button.form-control.btn.btn-primary.submit-button:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(1.05);
+}
+.card-top {
+  padding: 0.7rem 5rem;
+}
+a.btn-secondary.continue {
+  font-size: 15px;
+  background-color: none;
+  border-width: 2px;
+  text-decoration: none;
+  border-style: solid;
+}
+.link {
+  text-align: left;
+}
+.d-block.invalid-feedback.credit {
+  margin-left: 1rem;
+}
+#modal-content {
+  padding: 100px;
+}
+#confirm-modal {
+  width: 100%;
+}
+button.btn.btn-primary.download {
+  margin: 0 auto;
+}
+hr {
+  color: #0000004f;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.add td {
+  color: #c5c4c4;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.content {
+  font-size: 14px;
+}
+.total.receipt {
+  background: black;
+}
+.card.payment {
+  bottom: 2.486rem;
+}
+
+@media only screen and (max-width: 768px) {
+  a {
+    display: none;
+  }
+  .container {
+    padding: 0 1rem 3rem 1rem;
+  }
+  .card-body {
+    padding: 0.5em 1.2em;
+  }
+  .card-body .card-text {
+    margin: 0;
+  }
+  .card.payment {
+    top: 0.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .card-top {
+    padding: 0.7rem 1rem;
+  }
+}

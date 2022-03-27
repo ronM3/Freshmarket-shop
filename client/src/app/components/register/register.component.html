@@ -1,0 +1,151 @@
+
+<img class="background-img-second" src="https://image.freepik.com/free-vector/sign-up-concept-illustration_114360-7865.jpg" alt="not Found">
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100">
+    <div class="container">
+        <img *ngIf="successfulRegister" class="img-fluid successRegister" src="https://i.pinimg.com/originals/b9/88/b7/b988b7c3e84e1f83ef9447157831b460.gif">
+        <div class="modal-body">
+
+                <!-- second Step -->
+            <div class="col-md-6 px-lg-6" *ngIf="first_step">
+                <div class="card .second">
+                    <div class="card-body p-md-5">
+                        <h3 class="mb-4">------Almost done------</h3>
+                        <form [formGroup]="secondStep" (ngSubmit)="register()"> 
+                            <div class="form-group">
+                                <select class="custom-select" (change)="changeCity($event)" formControlName="cityName">
+                                    <option [ngValue]="cityName">Choose your city</option>
+                            
+                                   <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                                </select>
+                                <div class="invalid-feedback" *ngIf="cityName.errors?.required">
+                                   <sup>*</sup>Please enter your city name
+                                </div>
+                             </div>
+                            <div class="form-group">
+                                <input formControlName="street"
+                                    [class.is-invalid]="streetField.touched && streetField.invalid" type="text"
+                                    class="form-control" placeholder="Enter street name">
+                                <div *ngIf="streetField.touched && streetField.hasError('required')"
+                                    class="d-block invalid-feedback">Please
+                                    enter your street name.</div>
+                            </div>
+                   
+                            <div class="form-group">
+                                <input formControlName="firstName"
+                                    [class.is-invalid]="firstNameField.touched && firstNameField.invalid" type="text"
+                                    class="form-control" placeholder="First and last name">
+                                <div *ngIf="firstNameField.touched && firstNameField.hasError('required')"
+                                    class="d-block invalid-feedback">Please
+                                    enter your first name.</div>
+                            </div>
+                            <div class="form-group">
+                                <input formControlName="lastName"
+                                    [class.is-invalid]="lastNameField.touched && lastNameField.invalid" type="text"
+                                    class="form-control" placeholder="First and last name">
+                                <div *ngIf="lastNameField.touched && lastNameField.hasError('required')"
+                                    class="d-block invalid-feedback">Please
+                                    enter last name.</div>
+                            </div>
+                            <div class="backBtn" (click)="stepBack()">
+                                <span class="line tLine"></span>
+                                <span class="line mLine"></span>
+                                <span class="label">Go back</span>
+                                <span class="line bLine"></span>
+                              </div>
+                            <span *ngIf="serverErrorShow" id="wrong-info" className="wrong-details">
+                                <i class="fas fa-exclamation-circle emoji-wrong"></i>Email already exist in the system
+                              </span>
+
+                            <button [disabled]="secondStep.invalid" type="submit" class="btn register">Sign up</button>
+                        </form>
+                    </div>
+                    <div class="card-footer px-lg-5 py-lg-4">
+                        <div class="text-sm text-muted">Already have an account? <a
+                                routerLink="/login">Login</a>.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Step -->
+
+            <div class="container">
+                <div class="modal-body">
+                    <div class="col-md-6 px-lg-6" *ngIf="second_Step">
+                        <div class="card">
+                            <div class="card-body p-md-5">
+                                <h3 class="mb-4">Get started with Fresh market</h3>
+                                <form [formGroup]="firstStep" (ngSubmit)="nextStep()">
+
+                                    <div class="form-group">
+                                        <input formControlName="id"
+                                            [class.is-invalid]="idField.touched && idField.invalid" name="idExistInSystem" type="text"
+                                            class="form-control" placeholder="ID" minlength="9">
+                                        <div *ngIf="idField.touched && idField.hasError('required') && idField.errors?.pattern"
+                                            class="d-block invalid-feedback">
+                                            Please
+                                            provide a valid id.</div>
+                                        <div *ngIf="idField.errors?.minlength && idField.errors?.pattern" class="d-block invalid-feedback">
+                                            <span> Please
+                                                provide a valid id.</span>
+                                        </div>
+                                  
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input formControlName="email"
+                                            [class.is-invalid]="emailField.touched && emailField.invalid" type="email"
+                                            class="form-control" placeholder="Enter Email">
+                                        <div *ngIf="emailField.touched && emailField.hasError('required')"
+                                            class="d-block invalid-feedback">Please
+                                            provide a Email.</div>
+                                        <div *ngIf="emailField.touched && emailField.hasError('email')"
+                                            class="d-block invalid-feedback">Email
+                                            address is
+                                            not valid</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input formControlName="password"
+                                            [class.is-invalid]="passwordField.touched && passwordField.invalid"
+                                            type="password" class="form-control" placeholder="Password">
+                                        <div *ngIf="passwordField.touched && passwordField.hasError('required')"
+                                            class="d-block invalid-feedback">
+                                            Please
+                                            provide a Password.</div>
+                                        <div *ngIf="passwordField.touched && passwordField.errors?.minlength"
+                                            class="d-block invalid-feedback">
+                                            Passwords must contain at least 6 characters</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input formControlName="passwordConfirm"
+                                            [class.is-invalid]="passwordConfirmation.touched && passwordConfirmation.invalid"
+                                            type="password" class="form-control" placeholder="Password Confirm">
+                                        <div *ngIf="passwordConfirmation.touched && passwordConfirmation.hasError('required')"
+                                            class="d-block invalid-feedback">
+                                            Please
+                                            confirm your password.
+                                        </div>
+                                        <div class="d-block invalid-feedback" *ngIf="passwordConfirmation.errors?.matching">
+                                            Confirm Password does not match
+                                        </div>
+                                    </div>
+                                  
+                                    <div *ngIf="idExistError && idField.touched" id="wrong-info" class="d-block invalid-feedback">
+                                        <span> Your id is already exist in the system</span>
+                                    </div>
+
+                                    <button [disabled]="firstStep.invalid" type="submit"
+                                        class="btn">Next step</button>
+                                </form>
+                            </div>
+                            <div class="card-footer px-lg-5 py-lg-4">
+                                <div class="text-sm text-muted">Already have an account? <a
+                                        routerLink="/login">Login</a>.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>

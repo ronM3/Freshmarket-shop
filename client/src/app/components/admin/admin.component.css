@@ -1,0 +1,152 @@
+.card {
+  padding: 5px;
+}
+.col.panel {
+  max-width: 40%;
+  max-width: 17%;
+  right: 1rem;
+  height: 16rem;
+}
+.container-fluid {
+  padding-top: 3.5rem;
+}
+.col-sm {
+  max-height: 39px;
+  max-width: 90px;
+}
+.btn {
+  line-height: 1;
+}
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0);
+  max-width: 100%;
+  transform: scale(1.05);
+}
+button.nav-item-button.active {
+  background-color: transparent;
+  color: black;
+  border: 2px solid green;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  display: flex;
+  margin: 0 auto;
+  line-height: 1;
+  padding: 0.5rem;
+}
+button.nav-item-button.active:hover,
+button.nav-item-button.active:active {
+  background-color: #6c757d;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.new-product-title {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 2.35em;
+  letter-spacing: -2px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.addProductB {
+  color: #fff;
+  background: #f39a1a;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 38px;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  transition: all 0.6s ease 0s;
+}
+.addProductB:hover {
+  color: #fff;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.nav-link .active {
+  border: 1px solid;
+}
+body {
+  background-color: #eee;
+}
+.nav-link {
+  border-radius: 0px !important;
+  transition: all 0.5s;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.nav-link small {
+  font-size: 12px;
+}
+.nav-link:hover {
+  background-color: #52525240 !important;
+}
+.nav-link .fa {
+  transition: all 1s;
+  font-size: 20px;
+}
+.nav-link:hover .fa {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+.nav-link:hover .addIcon {
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+.addIcon {
+  transition: all 1s;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #007bff;
+  background-color: transparent;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: transparent;
+}
+body {
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.background-img {
+  position: absolute;
+  left: 56rem;
+  opacity: 0.1;
+  top: 10.4rem;
+  max-height: 71vh;
+}
+@media only screen and (max-width: 750px) {
+  .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 79%;
+  }
+}
+.form-control.upload{
+  padding:3px
+}
+input#file {
+  width: 13em;
+}

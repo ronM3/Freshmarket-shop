@@ -1,0 +1,356 @@
+div {
+  margin: auto;
+  display: block;
+}
+body {
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+fieldset {
+  /* for chrome and safari*/
+  -webkit-animation-duration: 0.25ms;
+  -webkit-animation-name: slidein;
+  /*for firefox*/
+  -moz-animation-duration: 1s;
+  -moz-animation-name: slidein;
+  /* for opera*/
+  -o-animation-duration: 1s;
+  -o-animation-name: slidein;
+  /* Standard syntax*/
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+@-webkit-keyframes slidein {
+  from {
+    margin-right: 50%;
+    width: 200%;
+  }
+  to {
+    margin-right: 0%;
+    width: 200%;
+  }
+}
+@-moz-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@-o-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes slidein {
+  from {
+    margin-left: 25%;
+    width: 100%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.background-img {
+  position: absolute;
+  left: 6rem;
+  top: 1rem;
+  max-height: 71vh;
+}
+.background-img-second {
+  position: absolute;
+  top: 1.6rem;
+  left: 10.5rem;
+}
+
+.successRegister {
+  position: absolute;
+  max-height: 70vh;
+  max-width: 98vh;
+  opacity: 86px;
+  top: 6rem;
+  opacity: 0.8;
+  display: inline-block;
+  left: 47rem;
+}
+@media screen and (max-height: 650px) {
+  .successRegister {
+    opacity: 0.9;
+    max-width: 100%;
+    position: absolute;
+    top: 9rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.page-holder {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  flex-wrap: wrap;
+}
+.card {
+  position: relative;
+  max-height: 99vh;
+  height: 84vh;
+  bottom: 1.6rem;
+  left: 19rem;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  box-shadow: 0 0.5rem 1rem 20px rgb(0 0 0 / 15%);
+  border-radius: 1rem;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.card.\.second {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  animation: slidein 2s;
+  -webkit-animation: slidein 2s;
+  -moz-animation: slidein 2s;
+  -o-animation: slidein 2s;
+  -ms-animation: slidein 2s;
+}
+h3 {
+  color: #026fd4;
+  font-size: 33px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+.modal-body {
+  padding: 32px 40px 40px !important;
+}
+.modal-body .title {
+  color: #1093ea;
+  font-size: 33px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+.modal-body .description {
+  color: #9a9ea9;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 20px;
+}
+.modal-body .form-group {
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative;
+}
+.modal-body .input-icon {
+  color: #777;
+  font-size: 18px;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 20px;
+}
+.modal-body .form-control {
+  font-size: 17px;
+  height: 45px;
+  width: 100%;
+  padding: 6px 0 6px 50px;
+  margin: 0 auto;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  box-shadow: none;
+  outline: none;
+}
+.form-control::placeholder {
+  color: #aeafb1;
+}
+.btn {
+  color: #fff;
+  background: linear-gradient(to right, #33a3ff, #0675cf, #4cd5ff);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 38px;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  transition: all 0.6s ease 0s;
+}
+.btn:hover {
+  color: #fff;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.text-sm.text-muted {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  bottom: 6px;
+}
+.card-footer.px-lg-5.py-lg-4 {
+  padding-bottom: 0;
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 100%;
+}
+.form-icon {
+  color: #1093ea;
+  font-size: 55px;
+  line-height: 55px;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.d-block.invalid-feedback {
+  position: absolute;
+}
+.input-icon .password {
+  position: relative;
+  top: 25%;
+}
+input.form-control.ng-dirty.ng-touched.is-invalid.ng-invalid {
+  border-color: #dc3545 !important;
+}
+.wrong-details {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+#wrong-info {
+  -webkit-animation: fadeOut 8s;
+  animation: fadeOut 8s;
+  animation-fill-mode: none;
+  position: relative;
+  color: #dc3545;
+  bottom: 12px;
+}
+.emoji-wrong {
+  color: red;
+  background-color: white;
+  border-radius: 50%;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.card .second {
+  top: 1rem;
+}
+.card.\.second {
+  top: 1rem;
+}
+button.btn.register {
+  top: 0.5rem;
+  position: relative;
+}
+div.backBtn {
+  width: 100px;
+  top: 77px;
+  right: 11rem;
+  background-color: #f4f4f4;
+  transition: all 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+span.line {
+  bottom: auto;
+  right: auto;
+  top: auto;
+  left: auto;
+  background-color: lightgray;
+  border-radius: 10px;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s,
+    background-color 0.2s ease;
+}
+span.tLine {
+  top: 0px;
+}
+span.mLine {
+  top: 13px;
+  opacity: 0;
+}
+span.bLine {
+  top: 26px;
+}
+.label {
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  color: grey;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-size: 1em;
+}
+div.backBtn:hover span.label {
+  left: 25px;
+}
+div.backBtn:hover span.line {
+  left: -10px;
+  height: 5px;
+  background-color: #f76060;
+}
+div.backBtn:hover span.tLine {
+  width: 25px;
+  transform: rotate(-45deg);
+  left: -15px;
+  top: 6px;
+}
+div.backBtn:hover span.mLine {
+  opacity: 1;
+  width: 30px;
+}
+div.backBtn:hover span.bLine {
+  width: 25px;
+  transform: rotate(45deg);
+  left: -15px;
+  top: 20px;
+}

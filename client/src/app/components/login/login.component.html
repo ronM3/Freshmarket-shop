@@ -1,0 +1,52 @@
+<img class="background-img"
+  src="https://image.freepik.com/free-vector/shopping-supermarket-cart-with-grocery-pictogram_1284-11697.jpg">
+<div class="container">
+  <div class="modal-body">
+    <div class="col-md-6 px-lg-6">
+      <div class="card">
+        <div class="card-body p-md-5">
+          <div class="form-icon">
+            <i class="fa fa-user-edit"></i>
+          </div>
+          <h3 class="title">User Login</h3>
+          <p class="description">Login here Using Email & Password</p>
+
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <span class="input-icon"><i class="fa fa-user"></i></span>
+              <input formControlName="email" [class.is-invalid]="emailField.touched && emailField.invalid" type="email"
+                class="form-control" placeholder="Enter Email">
+              <div *ngIf="emailField.touched && emailField.hasError('required')" class="d-block invalid-feedback">
+                Please
+                provide a Email.</div>
+              <div *ngIf="emailField.touched && emailField.hasError('email')" class="d-block invalid-feedback">Email
+                address is
+                not valid</div>
+            </div>
+            <!-- Password control -->
+            <div class="form-group" [ngClass]="{'form-group-password': this.passwordIvalid}">
+              <span class="input-icon password"><i class="fas fa-key"></i></span>
+
+              <input formControlName="password" [class.is-invalid]="passwordField.touched && passwordField.invalid"
+                type="password" class="form-control password" placeholder="Password">
+              <div *ngIf="passwordField.touched && passwordField.hasError('required')" class="d-block invalid-feedback">
+                Please
+                provide a Password.</div>
+            </div>
+
+            <span *ngIf="unValidDetails" id="wrong-info" className="wrong-details">
+              <i class="fas fa-exclamation-circle emoji-wrong"></i> Your email or password is incorrect.
+            </span>
+
+            <button [disabled]="loginForm.invalid" type="submit" class="btn">
+              <span id="submitButton">Login</span>
+            </button>
+          </form>
+
+        </div>
+        <div class="card-footer px-lg-5 py-lg-4">
+          <div class="text-sm text-muted">Don't have an account? <a routerLink="/regiser">Register</a>.</div>
+        </div>
+      </div>
+
+    </div>

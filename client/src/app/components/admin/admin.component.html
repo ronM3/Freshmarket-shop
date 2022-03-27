@@ -1,0 +1,158 @@
+<div class="container-fluid">
+    <div class="row gx-5">
+        <img class="background-img" src="https://i.ibb.co/nfhQkzJ/admin-panel.png" alt="admin-panel">
+        <div class="d-flex flex-column flex-shrink-0 bg-light vh-100" style="width: 100px;">
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                <li class="nav-item-active"> <a (click)="showAllProducts()" class="nav-link active py-3 border-bottom">
+                        <i class="fa fa-home"></i> <small>Home</small> </a> </li>
+                <li> <a (click)="showAddProductForm()" class="nav-link py-3 border-bottom">
+                        <fa-icon class="addIcon" [icon]="faSquarePlus"></fa-icon><small>Add Product</small>
+                    </a></li>
+                <li> <a (click)="showAddProductForm()" class="nav-link py-3 border-bottom"> <i
+                            class="fa fa-first-order"></i> <small>Add Category</small> </a> </li>
+                <li> <a class="nav-link py-3 border-bottom"> <i class="fa fa-cog"></i> <small>Settings</small> </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col" *ngIf="!showAddProduct">
+            <div class="form-group form-inline">
+                Search product by name:
+                <input class="form-control ml-2" type="text" name="searchText" [(ngModel)]="searchText" />
+            </div>
+            <div class="p-3 border bg-light" data-paginations="true">
+                <table class="table table-light table-striped table-hover" id="table" data-toggle="table"
+                    data-height="260" data-paginations="true" data-search="true" data-visible-search="true">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Info</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Upload Image</th>
+                        </tr>
+                    </thead>
+                    <tbody
+                        *ngFor="let product of products | slice: (page-1) * pageSize : page * pageSize | searchByNamePipe: searchText">
+                        <tr>
+
+                            <th scope="row">{{product.productID}}</th>
+                            <td>
+                                <span (keyup)="onNameChanged(product.productID, $event)" #nameEdit
+                                    contenteditable="true">{{product.product_name}}</span>
+                            </td>
+                            <td>
+                                <span (keyup)="onPriceChanged(product.productID, $event)"
+                                    contenteditable="true">{{product.product_price}}</span>
+                                <span>₪</span>
+                            </td>
+                            <td>
+                                <span (keyup)="oninfoChanged(product.productID, $event)"
+                                    contenteditable="true">{{product.info}}</span>
+                            </td>
+
+                            <td><img class="col-sm" src="{{product.image}}" alt="sans" /></td>
+                            <td>
+                                <button class="btn btn-secondary edit">
+                                    <input type="file" name="file" id="file" class="inputfile"
+                                        (change)="onFileSelected($event)" #fileUpload>
+                                    <fa-icon [icon]="faEdit"></fa-icon>
+                                </button>&nbsp;
+
+                                <button (click)="saveEditedProduct(product.productID, product)"
+                                    class="btn btn-success">SAVE</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="4" [boundaryLinks]="true"
+                    [pageSize]="pageSize" class="d-flex justify-content-center"></ngb-pagination>
+            </div>
+        </div>
+        <div class="col" *ngIf="showAddProduct">
+            <div class="container">
+
+                <div class="col-md-6 px-lg-6">
+                    <div class="card">
+                        <h1 class="new-product-title">ADD NEW PRODUCT</h1>
+                        <div class="card-body p-md-5">
+                            <form [formGroup]="addProductForm" (ngSubmit)="addNewProduct()">
+                                <!-- product name -->
+                                <div class="form-group">
+                                    <span>Insert Product name</span>
+                                    <input formControlName="productName"
+                                        [class.is-invalid]="product_name.touched && product_name.invalid" type="text"
+                                        class="form-control" placeholder="Product name" minlength="2">
+                                    <div *ngIf="product_name.touched && product_name.hasError('required')"
+                                        class="d-block invalid-feedback">
+                                        Please
+                                        provide a product name.</div>
+                                </div>
+                                <!-- product price -->
+                                <div class="form-group">
+                                    <span>Insert Product price</span>
+                                    <input formControlName="productPrice"
+                                        [class.is-invalid]="product_price.touched && product_price.invalid"
+                                        type="number" class="form-control product-price" placeholder="Product price"
+                                        minlength="1">
+                                    <div class="invalid-feedback" *ngIf="product_price.errors?.required">
+                                        <sup>*</sup>Please enter product price
+                                    </div>
+
+                                </div>
+                                <!-- category select -->
+                                <div class="form-group">
+                                    <select class="custom-select" (change)="changeCategory($event)"
+                                        [formControl]="categoryName"
+                                        [class.is-invalid]="categoryName.touched && categoryName.invalid">
+                                        <option value="">Choose category</option>
+                                        <option *ngFor="let category of categories" [value]="category.category_name">
+                                            {{category.category_name}}</option>
+                                    </select>
+                                    <div class="invalid-feedback" *ngIf="categoryName.errors?.required">
+                                        <sup>*</sup>Please enter category name
+                                    </div>
+                                </div>
+                                <!-- image select -->
+                                <div class="form-group">
+                                    <span>Choose Image</span>
+                                    <input formControlName="productImage"
+                                        [class.is-invalid]="productImage.touched && productImage.invalid" type="file"
+                                        class="form-control upload" placeholder="Choose Image"
+                                        (change)="onFileSelected($event)">
+
+                                    <div *ngIf="productImage.touched && productImage.hasError('required')"
+                                        class="d-block invalid-feedback">
+                                        Please
+                                        provide a product image.</div>
+                                </div>
+                                <div class="form-group">
+                                    <span>Product info</span>
+                                    <input formControlName="productInfo"
+                                        [class.is-invalid]="productInfo.touched && productInfo.invalid" type="text"
+                                        class="form-control" placeholder="Product info">
+                                    <div *ngIf="productInfo.touched && productInfo.hasError('required')"
+                                        class="d-block invalid-feedback">
+                                        Please
+                                        provide a product info.</div>
+                                </div>
+
+                                <button [disabled]="addProductForm.invalid" type="submit" class="addProductB">
+                                    <span>ADD PRODUCT</span>
+                                </button>
+                            </form>
+                            <div *ngIf="showProgression" class="progress">
+                                <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+                                    role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                    style="width: 100%"></div>
+                            </div>
+                            <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success"
+                                (closed)="successMessage = ''">{{ successMessage }}
+                            </ngb-alert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

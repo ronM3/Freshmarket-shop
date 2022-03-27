@@ -1,0 +1,182 @@
+.cardsContainer {
+  min-height: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 6rem;
+  margin-top: 8rem;
+}
+.cardsContainer > div {
+  flex-basis: calc(25% - 60px);
+}
+@media only screen and (max-width: 750px) {
+  .cardsContainer {
+    margin-left: 3rem;
+  }
+  .d-flex.fixed-top.input-group.w-auto {
+    margin-left: 0rem;
+    margin-top: 6rem;
+  }
+}
+.d-flex.fixed-top.input-group.w-auto {
+  margin-left: 38rem;
+  margin-top: 0.7rem;
+}
+.searchB {
+  display: block;
+  width: 25%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  outline: blue;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+::after {
+  border-color: blue;
+  border: none;
+}
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+.filterPrice {
+  border-bottom: solid rgb(144, 144, 231);
+  position: fixed;
+  right: 0;
+  font-weight: 600;
+  top: 12rem;
+  color: #2f416e;
+}
+/* --------------- ticer---- */
+.hwrap {
+  overflow: hidden;
+  position: relative;
+  top: 6rem;
+  bottom: 0;
+  width: 40%;
+  height: 3.1rem;
+  background: white;
+  padding-left: 60%;
+  box-sizing: content-box;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  align-items: center;
+  flex: 1 1 0%;
+  white-space: nowrap;
+  will-change: transform;
+}
+.hmove {
+  display: flex;
+  height: 3.8rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+  align-items: center;
+  height: 50px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+}
+.hitem {
+  display: inline-block;
+  padding: 0 15rem;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.23em;
+  color: rgb(255, 255, 255);
+  animation-duration: 250s;
+}
+
+@keyframes tickerh {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-500%, 0, 0);
+  }
+}
+@keyframes tickerh {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-300%, 0, 0);
+    transform: translate3d(-500%, 0, 0);
+  }
+}
+.hmove {
+  animation: tickerh linear 90s infinite;
+}
+.hmove:hover {
+  animation-play-state: paused;
+}
+.scroll-bar-image {
+  height: 35px;
+  width: 30px;
+  display: initial;
+  margin-right: 0.4rem;
+}
+.icons {
+  color: #189cee;
+}
+.scroll-bar-text {
+  margin: 0px 40px 0px 4px;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #189cee;
+}
+.scroll-bar-text.timeslot {
+  font-weight: 400;
+  font-size: 1.1em;
+  color: rgb(29, 164, 80);
+  margin: 0px 40px 0px 4px;
+}
+.scroll-bar-text.change {
+  font-weight: 500;
+  font-size: 1.1em;
+  color: rgb(29, 164, 80);
+}
+.scroll-bar-text.discount {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+div#tickerContainer {
+  left: 23rem;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  div#tickerContainer {
+    left: 9rem;
+    position: relative;
+  }
+  .hmove {
+    animation: tickerh linear 35s infinite;
+  }
+  .hwrap {
+    position: fixed;
+    top: 5rem;
+    bottom: 0;
+    width: 100%;
+    height: 3.1rem;
+    background: white;
+    padding-left: 73%;
+  }
+}
+.icons.clock {
+  color: rgb(29, 164, 80);
+}

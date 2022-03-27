@@ -1,0 +1,156 @@
+.under-price {
+  margin-top: -1px;
+  color: grey;
+  font-size: 13px;
+}
+.card {
+  max-width: 40.2vh;
+  width: 40vh;
+  height: 40vh;
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+  overflow: hidden;
+  box-shadow: rgb(87, 115, 146) 0px 20px 30px -10px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card-img-top {
+  position: relative;
+  top: 0.8rem;
+  max-height: 20vh;
+  height: 20vh;
+  max-width: 22vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.card-title {
+  font-size: 0.96em;
+  color: #2f416e;
+}
+.priceT {
+  font-size: larger;
+}
+.add_to_cart {
+  background-color: none;
+  background: none;
+  color: rgb(4, 173, 4);
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+.remove_from_cart {
+  background-color: none;
+  background: none;
+  color: red;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+.amount_items {
+  background-color: transparent;
+  outline: none;
+  text-align: center;
+  border: none;
+  max-width: 1.5rem;
+  resize: none;
+  word-break: break-all;
+}
+.card-text .card-info {
+  position: relative;
+  margin-top: 0;
+  bottom: 1.5rem;
+}
+span.card-subtitle.cartB {
+  position: relative;
+  /* display: inline-block; */
+  left: 1.1rem;
+  box-sizing: border-box;
+}
+p.card-subtitle.info {
+  color: #2f416e;
+  font-size: 14px;
+  font-weight: 450;
+}
+.updateB {
+  background-color: #00558a;
+  transition: all 0.6s ease 0s;
+}
+.updateB:hover {
+  color: #fff;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.updateB {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  position: relative;
+  bottom: 3px;
+  right: 4px;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 1px;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  border-radius: 0.25rem;
+}
+button.updateB.add {
+  position: relative;
+  display: inline-block;
+  right: 8px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

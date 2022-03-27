@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product.product_name}}</h5>
+    <p class="card-subtitle info">{{product.info}}</p>
+    <p class="card-subtitle info">
+      <span class="card-text"><span class="text-muted">Price:{{product.product_price}}₪</span></span>
+      <span class="card-subtitle cartB">
+        <button class="updateB add" (click)="addItemToCart(product)">ADD</button>
+        <button class="updateB" (click)="updateCartItem(product)">UPDATE</button>
+        <button #buttonToBeClicked (click)="incrementProduct(product)" class="add_to_cart"><i
+            class="fas fa-cart-plus"></i></button>
+        <input class="amount_items" [ngModel]="amount" (ngModelChange)="setAmount($event,product)" />
+        <button class="remove_from_cart" (click)="decrement(product)"><i class="fas fa-cart-arrow-down"></i>
+        </button></span>
+    </p>
+    <div class="card-footer bg-transparent border-success">
+    </div>
+  </div>
+</div>

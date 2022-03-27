@@ -1,0 +1,14 @@
+<div class="card item" [@toggleBox]="isOpen ?  'closed'  : 'open' ">
+    <img src="{{product.image}}" class="card-img-top" />
+    <div class="card-body item">
+        <h5 class="card-title">{{product.product_name}}</h5>
+        <p class="card-text">
+            <button class="deleteB" (click)="deleteCartItem(product,$event)">
+                <fa-icon class="delIcon" [icon]="faTrash"></fa-icon>
+            </button>
+            <span class="card-subtitle"> <input name="amount" readonly class="amount_items"
+                    placeholder="Amount:{{product.amount}}"></span>
+            <span class="item-price">₪{{product.sum_price}}</span>
+        </p>
+    </div>
+</div>

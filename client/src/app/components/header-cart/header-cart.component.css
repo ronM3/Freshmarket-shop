@@ -1,0 +1,93 @@
+.roundButton {
+  display: flex;
+}
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 81%;
+  font-weight: 700;
+  position: relative;
+  bottom: 11px;
+  right: 14px;
+}
+span.badge.badge-light {
+  border-radius: 9999px;
+}
+.button3 {
+  justify-items: right;
+  padding: 0.25em 0.5em 0.3rem 0.3rem;
+  cursor: pointer;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #68c0f3;
+  text-align: center;
+  transition: all 0.2s;
+}
+.button3:hover {
+  background-color: #4095c6;
+}
+@media screen and (max-height: 650px) {
+  .button3 {
+    margin-left: 0;
+  }
+}
+i.fa.fa-shopping-cart {
+  font-size: 25px;
+  padding: 1px 3px 2px 4px;
+}
+nav.navbar-expand-lg.navbar-light.bg-light.mb-3 {
+  margin-top: 3.5rem;
+  box-sizing: border-box;
+  border-bottom: double;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255) !important;
+}
+.li-icons {
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: block;
+  background-color: none;
+}
+a.nav-link.title {
+  font-size: 0.9rem;
+  line-height: 0.8;
+}
+li.nav-item.nav_menu_hover {
+  cursor: pointer;
+}
+li.nav-item.nav_menu_hover:hover {
+  color: #001f3f;
+  font-family: "FontAwesome", sans-serif;
+  transform: scale(1.05);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #cac4c4;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+ul.navbar-nav.seoncd_nav {
+  position: relative;
+  top: 0rem;
+  margin: 0 auto;
+}
+.collapse.navbar-collapse {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  img.li-icons {
+    position: relative;
+    top: 1.2rem;
+    height: 30px;
+  }
+  a.nav-link.title {
+    position: relative;
+    bottom: 7px;
+    left: 12px;
+  }
+}

@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+
+.navbar-brand {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+}
+a.navbar-brand.navbar-brand {
+  color: #189cee;
+}
+.d-flex {
+  max-width: 17rem;
+  margin: 0 auto;
+  top: 0.6rem;
+}
+.openB {
+  font-size: 30px;
+  cursor: pointer;
+}
+i.fa.fa-shopping-cart {
+  font-size: 25px;
+  padding: 1px 3px 2px 4px;
+}
+.d-flex {
+  display: flex !important;
+  line-height: 2;
+  background-color: #f3f5f8 !important;
+  flex-grow: 1 !important;
+}
+a.nav-link.login {
+  cursor: pointer;
+  position: relative;
+  right: 15px;
+}
+.dropdown-menu.dropdown-menu-center {
+  left: -75px;
+  flex-direction: column;
+}
+a.nav-link.login {
+  right: 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-weight: 600;
+}
+ul.navbar-nav.profile {
+  position: fixed;
+  right: 0;
+  z-index: 9999;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  ul.navbar-nav.profile {
+    display: contents;
+  }
+}
+a.nav-link.profile-name {
+  right: 0;
+  color: #1579f2;
+}
+i.far.fa-user {
+  font-weight: 600;
+  margin-right: 2px;
+}
+li.nav-item.login {
+  display: block;
+  background-color: #f0f8ff;
+  color: rgba(0, 0, 0, 0.55);
+  z-index: 3334;
+  right: 0;
+  border-radius: 10px;
+  position: fixed;
+}
+nav.navbar.\.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light.mb-3 {
+  background-color: white !important;
+}
+span#search-addon {
+  color: #189cee;
+}

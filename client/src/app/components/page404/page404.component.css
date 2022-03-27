@@ -1,0 +1,71 @@
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 4rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+img {
+  margin: 0 auto;
+}
+.typing-demo {
+  width: 43ch;
+  margin-top: 5px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  left: 10rem;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.back-home {
+  color: #fff;
+  background: rgb(255 79 90);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  left: 17rem;
+  line-height: 38px;
+  width: 50%;
+  height: 40px;
+  padding: 0;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: inline-block;
+  transition: all 0.6s ease 0s;
+}
+.back-home:hover {
+  color: #fff;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 750px) {
+  .typing-demo {
+    font-size: initial;
+    left: 9px;
+  }
+  .back-home {
+    left: 0;
+    width: 100%;
+  }
+  .container {
+    top: 10rem;
+  }
+}
