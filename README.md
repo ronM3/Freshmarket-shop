@@ -9,4 +9,4 @@ https://freshmarketapp.herokuapp.com/
 * Admin management panel
 * Checkout process, placing order
 * File upload feature
-* Download payment receipt
+* Download payment receipt in PDF file
