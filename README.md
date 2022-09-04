@@ -1,6 +1,8 @@
 # Freshmarket-shop
 e commerce shop build with angular &amp; rxjs,  Backend: Node.js, Express, bcrypt, mysql. Frontend: Angular, RxJs, Reactive forms, CSS/Bootstrap, file upload feature
-# Website
+# Demo
+ ![](https://github.com/ronM3/Freshmarket-shop/blob/main/website-demo.gif)
+# Live link
 https://freshmarketapp.herokuapp.com/
 # Features
 * Featured shopping cart
