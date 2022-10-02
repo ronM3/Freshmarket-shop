@@ -12,3 +12,4 @@ https://freshmarketapp.herokuapp.com/
 * Checkout process, placing order
 * File upload feature
 * Download payment receipt in PDF file
+* Multi steps registration
